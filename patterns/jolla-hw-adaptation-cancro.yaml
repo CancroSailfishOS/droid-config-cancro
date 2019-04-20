@@ -1,0 +1,96 @@
+# Feel free to disable non-critical HA parts during devel by commenting lines out
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
+
+Description: Pattern with packages for cancro HW Adaptation
+Name: jolla-hw-adaptation-cancro
+Requires:
+- droid-hal-cancro
+- droid-hal-cancro-detritus
+- droid-hal-cancro-img-boot
+- droid-hal-cancro-kernel
+- droid-hal-cancro-kernel-modules
+- droid-config-cancro-flashing
+- droid-config-cancro-sailfish
+- droid-config-cancro-pulseaudio-settings
+- droid-config-cancro-policy-settings
+- droid-config-cancro-preinit-plugin
+- droid-config-cancro-bluez4
+- droid-hal-version-cancro
+
+# Hybris packages
+- libhybris-libEGL
+- libhybris-libGLESv2
+- libhybris-libwayland-egl
+
+# Sensors
+- hybris-libsensorfw-qt5
+
+# Needed for /dev/touchscreen symlink
+- qt5-plugin-generic-evdev
+
+- qt5-feedback-haptics-ffmemless
+
+- pulseaudio-modules-droid
+- pulseaudio-modules-droid-glue
+
+# These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
+- qt5-qtwayland-wayland_egl
+- qt5-qpa-hwcomposer-plugin
+- qtscenegraph-adaptation
+
+# Add GStreamer v1.0 as standard
+- gstreamer1.0
+- gstreamer1.0-plugins-good
+- gstreamer1.0-plugins-base
+- gstreamer1.0-plugins-bad
+- nemo-gstreamer1.0-interfaces
+
+#For audio recording
+- qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
+
+- gstreamer1.0-droid
+
+# This is needed for notification LEDs
+- mce-plugin-libhybris
+
+## USB mode controller
+# Enables mode selector upon plugging USB cable:
+- usb-moded
+- usb-moded-defaults-android
+- usb-moded-developer-mode-android
+# OTG-USB support
+- usbstick-utils
+
+# Extra useful modes not officially supported:
+# might need some configuration to get working
+- usb-moded-mass-storage-android-config
+# working but careful with roaming!
+- usb-moded-connection-sharing-android-config
+# android diag mode only usable for certain android tools
+- usb-moded-diag-mode-android
+
+# hammerhead, grouper, and maguro use this in scripts, so include for all
+- rfkill
+
+# enable device lock and allow to select untrusted software
+- jolla-devicelock-daemon-encsfa
+
+# Settings app needs this since update15
+- jolla-settings-layout
+
+# For devices where test_gps eventually gets a fix:
+- geoclue-provider-hybris
+
+# For FM radio
+- qt5-qtmultimedia-plugin-mediaservice-irisradio
+- jolla-mediaplayer
+- jolla-mediaplayer-radio
+
+# For Torch in Events View
+- jolla-settings-system-flashlight
+
+# For sdcard on Mi4
+#- sd-utils
+
+Summary: Jolla HW Adaptation cancro
+

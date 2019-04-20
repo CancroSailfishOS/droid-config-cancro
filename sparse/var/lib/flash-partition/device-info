@@ -1,0 +1,7 @@
+CPUCHECK_STRING="Qualcomm MSM8974PRO-A"
+
+PART_1="boot"
+
+PART_REAL_1="mmcblk0p19"
+
+PART_I="1"
