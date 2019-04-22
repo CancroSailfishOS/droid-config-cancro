@@ -12,5 +12,4 @@
 # Community HW adaptations need this
 %define community_adaptation 1
 Provides: ofono-configs
-Provides: connman-configs-sailfish
 %include droid-configs-device/droid-configs.inc
