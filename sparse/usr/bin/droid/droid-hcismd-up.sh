@@ -48,7 +48,7 @@ wait_for_path "/dev/smd3" || exit -1
 wait_for_property_to_equal "ro.qualcomm.bt.hci_transport" "smd" || exit -1
 
 logd "Requesting BT Mac address"
-bt_mac=$(/system/bin/hci_qcomm_init -e -p 2 -P 2 -d /dev/ttyHSL0 2>&1 | grep -oP '([0-9a-f]{2}:){5}([0-9a-f]{2})')
+bt_mac=$(/system/bin/hci_qcomm_init -e -p 2 -P 2 -d /dev/ttyHSL0 2>&1 | grep -oE '([0-9a-f]{2}:){5}([0-9a-f]{2})')
 logd "BT MAC: $bt_mac"
 if [ ! -z "$bt_mac" ] ; then
   echo $bt_mac > /var/lib/bluetooth/board-address
